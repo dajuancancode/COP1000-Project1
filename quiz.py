@@ -12,21 +12,19 @@ def main():
     answer = ""
 
     #Read in file with questions
-    infile = open("quiz.txt", "r")
+    with open("quiz.txt", "r") as infile:
 
-    #Store the first line as the variable line1
-    line1 = infile.readline()
-    #Store the second line as the variable line2
-    line2 = infile.readline()
-    #Store the third line as the variable line3
-    line3 = infile.readline()
-    #Store the fourth line as the variable line4
-    line4 = infile.readline()
-    #Store the fifth line as the variable line5
-    line5 = infile.readline()
+        #Store the first line as the variable line1
+        line1 = infile.readline()
+        #Store the second line as the variable line2
+        line2 = infile.readline()
+        #Store the third line as the variable line3
+        line3 = infile.readline()
+        #Store the fourth line as the variable line4
+        line4 = infile.readline()
+        #Store the fifth line as the variable line5
+        line5 = infile.readline()
 
-    #Close the file
-    infile.close()
 
     #Split line1 at the semicolon
     #Store the first position in question1
