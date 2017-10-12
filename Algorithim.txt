@@ -1,0 +1,35 @@
+Define main function
+
+Declare constant for PERFECTSCORE as 5
+Declare variable for score as a whole number
+Declare vaiable for firsName as a string
+Declare variable for userName as a string
+Declare variable for answer as a string
+
+Read in file with questions
+
+Store the first line as the variable line1
+Store the second line as the variable line2
+Store the third line as the variable line3
+Store the fourth line as the variable line4
+Store the fifth line as the variable line5
+
+Close the file
+
+Split line1 at the semicolon
+Store the first position in question1
+
+Split line2 at the semicolon
+Store the first position in question2
+
+Split line3 at the semicolon
+Store the first position in question3
+
+Split line4 at the semicolon
+Store the first position in question4
+
+Split line5 at the semicolon
+Store the first position in question5
+
+Display introduction
+
