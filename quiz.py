@@ -31,131 +31,87 @@ def main():
     line1 = line1.split("?")
     question1 = line1.pop(0) + "?"
     answers1 = ",".join(line1)
-    problem1 = {question1: answers1}
+    correctAnswer1 = 'A'
+    problem1 = (question1, answers1, correctAnswer1)
+
 
     #Split line2 at the semicolon
     #Store the first position in question2
     line2 = line2.split("?")
     question2 = line2.pop(0) + "?"
     answers2 = ",".join(line2)
-    problem2 = {question2: answers2}
+    correctAnswer2 = 'C'
+    problem2 = (question2, answers2, correctAnswer2)
 
     #Split line3 at the semicolon
     #Store the first position in question3
     line3 = line3.split("?")
     question3 = line3.pop(0) + "?"
     answers3 = ",".join(line3)
-    problem3 = {question3: answers3}
+    correctAnswer3 = 'D'
+    problem3 = (question3, answers3, correctAnswer3)
 
     #Split line4 at the semicolon
     #Store the first position in question4
     line4 = line4.split("?")
     question4 = line4.pop(0) + "?"
     answers4 = ",".join(line4)
-    problem4 = {question4: answers4}
+    correctAnswer4 = 'A'
+    problem4 = (question4, answers4, correctAnswer4)
 
     #Split line5 at the semicolon
     #Store the first position in question5
     line5 = line5.split("?")
     question5 = line5.pop(0) + "?"
     answers5 = ",".join(line5)
-    problem5 = {question5: answers5}
+    correctAnswer5 = 'B'
+    problem5 = (question5, answers5, correctAnswer5)
 
-    for questions, answers in problem1.items():
-        print(questions)
-        print(answers[1:])
-        
-        print("Type in the letter represnting your choice below")
-        answer = input("> ").strip().upper()
+    #Create a tuple from all of the problemsets
+    problems = (problem1, problem2, problem3, problem4, problem5)
+    
+
+    #Display introduction
+    print()
+    print("Let's play COSMOS!!!")
+    print("This is a quiz game to test your knowledge of the cosmos\n")
+
+    print("Before we start, would you mind telling me your name?")
+    firstName = input("> ").strip().title()
+    userName = firstName[1:]+firstName[0]+"ay"
+    userName = userName.title()
+    print()
+
+    print("{} seems like a nice name, but that won't do.".format(firstName))
+    print("For the rest of the game, I will now call you {} \n".format(userName))
+    
+
+
+    #Loop through the problem tuple and keep track of the questions, the answers, and the correct answer
+    for questions, answers, correctAnswer  in problems:
+        print(questions, end='\n')
+        print(answers)
         print()
 
-        if answer == "A":
-            print("You guessed correctly\n")
-            score += 1
-            
-        else:
-            print("You guessed incorrectly")
-            print("The correct answer was: 92.96 million mi\n")
-    
-    for questions, answers in problem2.items():
-        print(questions)
-        print(answers[1:])
-        
         print("Type in the letter represnting your choice below")
         answer = input("> ").strip().upper()
-        print()
 
-        if answer == "C":
+        if answer == correctAnswer:
             print("You guessed correctly\n")
-            score += 1
+            score +=1
         else:
-            print("You guessed incorrectly")
-            print("The correct answer was: Andromeda\n")
-    
-    for questions, answers in problem3.items():
-        print(questions)
-        print(answers[1:])
-        
-        print("Type in the letter represnting your choice below")
-        answer = input("> ").strip().upper()
-        print()
-
-        if answer == "D":
-            print("You guessed correctly\n")
-            score += 1
-        else:
-            print("You guessed incorrectly")
-            print("The correct answer was: 187 years\n")
-    
-    for questions, answers in problem4.items():
-        print(questions)
-        print(answers[1:])
-        
-        print("Type in the letter represnting your choice below")
-        answer = input("> ").strip().upper()
-        print()
-        
-        if answer == "A":
-            print("You guessed correctly\n")
-            score += 1
-        else:
-           print("You guessed incorrectly")
-           print("The correct answer was: Voyager 2\n")
-    
-    for questions, answers in problem5.items():
-        print(questions)
-        print(answers[1:])
-        
-        
-        print("Type in the letter represnting your choice below")
-        answer = input("> ").strip().upper()
-        print()
-
-        if answer == "B":
-            print("You guessed correctly\n")
-            score += 1
-        else:
-            print("You guessed incorrectly")
-            print("The Answer was: No\n")
-    
+            print("You guessed incorrectly\n")
     if score == PERFECTSCORE:
-        print("Congratulations! You recieved a perfect score")
-        print(score)
+        print("{}, you must be Neil deGrasse Tyson, because you scored a perfect score.".format(userName))
     elif score == PERFECTSCORE - 1:
-        print("You were only one point away from a perfect score")
         print(score)
     elif score == PERFECTSCORE - 2:
-        print("You were two points away from a perfect score")
         print(score)
     elif score == PERFECTSCORE - 3:
-        print("You were three points away from a perfect score")
         print(score)
     elif score == PERFECTSCORE - 4:
-        print("You were four points away from a perfect score")
         print(score)
     else:
-        print("You missed every single question")
         print(score)
-    #Display introduction
 if __name__ == "__main__":
     main()
