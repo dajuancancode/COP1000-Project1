@@ -10,11 +10,11 @@
 
 **The project is due October 22.**
 
-##Update 10/16/201
+## Update 10/16/201
 I was able to refactor the quiz portion into one loop, instead of four seperate loops
 I also added the userName  
 
-##Features still need to be worked on:
+## Features still need to be worked on:
 Although, it now meets the project requirements, I need to come up with output statements for lower scores instead of just printing the score.
 
 ### Emoji's
